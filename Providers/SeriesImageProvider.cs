@@ -25,25 +25,29 @@ public class SeriesImageProvider : IRemoteImageProvider, IHasOrder
     public IEnumerable<ImageType> GetSupportedImages(BaseItem item)
         => new[] { ImageType.Primary };
 
-    public async Task<IEnumerable<RemoteImageInfo>> GetImages(BaseItem item, CancellationToken cancellationToken)
+    public Task<IEnumerable<RemoteImageInfo>> GetImages(BaseItem item, CancellationToken cancellationToken)
     {
         var apiKey = Plugin.Instance?.Configuration.ApiKey;
         if (string.IsNullOrWhiteSpace(apiKey))
-            return Enumerable.Empty<RemoteImageInfo>();
+            return Task.FromResult(Enumerable.Empty<RemoteImageInfo>());
 
         var url = BuildUrl(item, apiKey);
         if (url is null)
-            return Enumerable.Empty<RemoteImageInfo>();
+            return Task.FromResult(Enumerable.Empty<RemoteImageInfo>());
 
-        return new[]
+        var result = new[]
         {
             new RemoteImageInfo
             {
                 ProviderName = Name,
                 Url = url,
-                Type = ImageType.Primary
+                Type = ImageType.Primary,
+                Width = 1000,
+                Height = 1500,
             }
         };
+
+        return Task.FromResult<IEnumerable<RemoteImageInfo>>(result);
     }
 
     private static string? BuildUrl(BaseItem item, string apiKey)
