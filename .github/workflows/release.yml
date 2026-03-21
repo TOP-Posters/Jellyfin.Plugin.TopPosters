@@ -1,0 +1,73 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Build
+        run: dotnet publish Jellyfin.Plugin.TopPosters.csproj -c Release -o ./publish
+
+      - name: Create ZIP
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          ZIP_NAME="Jellyfin.Plugin.TopPosters_${VERSION}.0.zip"
+          cd publish && zip -j "../${ZIP_NAME}" Jellyfin.Plugin.TopPosters.dll
+          echo "ZIP_NAME=${ZIP_NAME}" >> $GITHUB_ENV
+          echo "VERSION=${VERSION}" >> $GITHUB_ENV
+
+      - name: Compute MD5
+        run: |
+          CHECKSUM=$(md5sum "$ZIP_NAME" | awk '{print $1}')
+          echo "CHECKSUM=${CHECKSUM}" >> $GITHUB_ENV
+
+      - name: Update manifest.json
+        run: |
+          TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          SOURCE_URL="https://github.com/${{ github.repository }}/releases/download/${GITHUB_REF_NAME}/${ZIP_NAME}"
+          python3 - <<EOF
+          import json, os
+
+          with open('manifest.json', 'r') as f:
+              manifest = json.load(f)
+
+          new_version = {
+              "version": "${VERSION}.0",
+              "changelog": "See https://github.com/${{ github.repository }}/releases/tag/${GITHUB_REF_NAME}",
+              "targetAbi": "10.9.0.0",
+              "sourceUrl": "${SOURCE_URL}",
+              "checksum": "${CHECKSUM}",
+              "timestamp": "${TIMESTAMP}"
+          }
+
+          manifest[0]['versions'].insert(0, new_version)
+
+          with open('manifest.json', 'w') as f:
+              json.dump(manifest, f, indent=2)
+          EOF
+
+      - name: Commit updated manifest
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add manifest.json
+          git commit -m "chore: update manifest for ${GITHUB_REF_NAME}"
+          git push origin HEAD:master
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ env.ZIP_NAME }}
+          generate_release_notes: true
