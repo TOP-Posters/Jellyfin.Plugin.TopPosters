@@ -10,3 +10,4 @@
 /Users/andreabezio/Documents/Progetti/Jellyfin.Plugin.TopPosters/obj/Debug/net8.0/refint/Jellyfin.Plugin.TopPosters.dll
 /Users/andreabezio/Documents/Progetti/Jellyfin.Plugin.TopPosters/obj/Debug/net8.0/Jellyfin.Plugin.TopPosters.pdb
 /Users/andreabezio/Documents/Progetti/Jellyfin.Plugin.TopPosters/obj/Debug/net8.0/ref/Jellyfin.Plugin.TopPosters.dll
+/Users/andreabezio/Documents/Progetti/Jellyfin.Plugin.TopPosters/obj/Debug/net8.0/Jellyfin.Plugin.TopPosters.sourcelink.json

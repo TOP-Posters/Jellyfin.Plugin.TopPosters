@@ -10,7 +10,7 @@ public class SeriesImageProvider : IRemoteImageProvider, IHasOrder
 {
     private readonly IHttpClientFactory _httpClientFactory;
 
-    public string Name => "Top Posters";
+    public string Name => "TOP Posters";
 
     public int Order => 0;
 
