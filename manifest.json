@@ -9,6 +9,14 @@
     "imageUrl": "https://raw.githubusercontent.com/TOP-Posters/Jellyfin.Plugin.TopPosters/main/thumb.png",
     "versions": [
       {
+        "version": "1.0.8.0",
+        "changelog": "See https://github.com/TOP-Posters/Jellyfin.Plugin.TopPosters/releases/tag/v1.0.8",
+        "targetAbi": "10.9.0.0",
+        "sourceUrl": "https://github.com/TOP-Posters/Jellyfin.Plugin.TopPosters/releases/download/v1.0.8/Jellyfin.Plugin.TopPosters_1.0.8.0.zip",
+        "checksum": "1b3da9f31018a8b748480ae1d7abc9ec",
+        "timestamp": "2026-03-21T16:45:37Z"
+      },
+      {
         "version": "1.0.7.0",
         "changelog": "See https://github.com/TOP-Posters/Jellyfin.Plugin.TopPosters/releases/tag/v1.0.7",
         "targetAbi": "10.9.0.0",
