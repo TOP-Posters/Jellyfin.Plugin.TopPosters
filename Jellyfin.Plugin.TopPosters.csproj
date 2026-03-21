@@ -16,7 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Configuration/configPage.html" />
+    <EmbeddedResource Include="Web/topposters.html" />
+    <EmbeddedResource Include="Web/topposters.js" />
   </ItemGroup>
 
 </Project>

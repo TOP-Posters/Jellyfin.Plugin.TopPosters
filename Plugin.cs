@@ -30,7 +30,12 @@ public class Plugin : BasePlugin<PluginConfiguration>, IHasWebPages
             new PluginPageInfo
             {
                 Name = "topposters",
-                EmbeddedResourcePath = $"{GetType().Namespace}.Configuration.configPage.html"
+                EmbeddedResourcePath = $"{GetType().Namespace}.Web.topposters.html"
+            },
+            new PluginPageInfo
+            {
+                Name = "toppostersjs",
+                EmbeddedResourcePath = $"{GetType().Namespace}.Web.topposters.js"
             }
         };
     }

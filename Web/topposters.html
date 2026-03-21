@@ -1,0 +1,33 @@
+<div id="TopPostersConfigPage" data-role="page" class="page type-interior pluginConfigurationPage" data-controller="__plugin/toppostersjs">
+    <div data-role="content">
+        <div class="content-primary">
+            <form id="TopPostersConfigForm">
+                <div class="sectionTitleContainer flex align-items-center">
+                    <h2 class="sectionTitle">TOP Posters</h2>
+                </div>
+                <div class="verticalSection">
+                    <p>
+                        Don't have an account yet?
+                        <a is="emby-linkbutton" class="button-link" href="https://api.top-streaming.stream/user/register" target="_blank">${ButtonLearnMore}</a>
+                    </p>
+                    <p>
+                        Customize posters (language, style, badges) from your
+                        <a is="emby-linkbutton" class="button-link" href="https://api.top-streaming.stream/user/dashboard" target="_blank">personal dashboard</a>.
+                        All preferences are applied automatically via your API key.
+                    </p>
+                </div>
+                <div class="inputContainer">
+                    <input is="emby-input" type="text" id="apiKey" name="ApiKey" label="API Key" placeholder="TP-xxxxxxxxxxxxxxxx" />
+                    <div class="fieldDescription">
+                        Find your API key in your <a is="emby-linkbutton" class="button-link" href="https://api.top-streaming.stream/user/dashboard" target="_blank">dashboard</a> under <strong>API Key</strong>.
+                    </div>
+                </div>
+                <div>
+                    <button is="emby-button" type="submit" class="raised button-submit block">
+                        <span>${Save}</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
