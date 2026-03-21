@@ -1,3 +1,4 @@
+using MediaBrowser.Common.Net;
 using MediaBrowser.Controller.Entities;
 using MediaBrowser.Controller.Entities.TV;
 using MediaBrowser.Controller.Providers;
@@ -73,5 +74,5 @@ public class EpisodeImageProvider : IRemoteImageProvider, IHasOrder
     }
 
     public Task<HttpResponseMessage> GetImageResponse(string url, CancellationToken cancellationToken)
-        => _httpClientFactory.CreateClient().GetAsync(url, cancellationToken);
+        => _httpClientFactory.CreateClient(NamedClient.Default).GetAsync(new Uri(url), cancellationToken);
 }

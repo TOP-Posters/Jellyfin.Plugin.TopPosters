@@ -29,7 +29,7 @@ public class Plugin : BasePlugin<PluginConfiguration>, IHasWebPages
         {
             new PluginPageInfo
             {
-                Name = Name,
+                Name = "topposters",
                 EmbeddedResourcePath = $"{GetType().Namespace}.Configuration.configPage.html"
             }
         };
