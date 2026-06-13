@@ -7,7 +7,7 @@ namespace Jellyfin.Plugin.TopPosters;
 
 public class Plugin : BasePlugin<PluginConfiguration>, IHasWebPages
 {
-    public const string BaseUrl = "https://test.top-streaming.stream";
+    public const string BaseUrl = "https://api.top-posters.com";
 
     public static Plugin? Instance { get; private set; }
 

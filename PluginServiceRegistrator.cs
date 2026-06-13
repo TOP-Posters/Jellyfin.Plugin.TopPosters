@@ -10,8 +10,8 @@ public class PluginServiceRegistrator : IPluginServiceRegistrator
 {
     public void RegisterServices(IServiceCollection serviceCollection, IServerApplicationHost applicationHost)
     {
-        serviceCollection.AddSingleton<IRemoteImageProvider, MovieImageProvider>();
-        serviceCollection.AddSingleton<IRemoteImageProvider, SeriesImageProvider>();
-        serviceCollection.AddSingleton<IRemoteImageProvider, EpisodeImageProvider>();
+        serviceCollection.AddSingleton<IImageProvider, MovieImageProvider>();
+        serviceCollection.AddSingleton<IImageProvider, SeriesImageProvider>();
+        serviceCollection.AddSingleton<IImageProvider, EpisodeImageProvider>();
     }
 }

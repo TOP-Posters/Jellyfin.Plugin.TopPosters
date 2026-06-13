@@ -42,8 +42,8 @@ public class MovieImageProvider : IRemoteImageProvider, IHasOrder
                 ProviderName = Name,
                 Url = url,
                 Type = ImageType.Primary,
-                Width = 1000,
-                Height = 1500,
+                Width = 500,
+                Height = 750,
             }
         };
 

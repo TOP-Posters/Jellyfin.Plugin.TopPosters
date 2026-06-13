@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/PIVtd/DZRQ=",
+  "dgSpecHash": "2f9lyVbqoc8=",
   "success": true,
   "projectFilePath": "/Users/andreabezio/Documents/Progetti/Jellyfin.Plugin.TopPosters/Jellyfin.Plugin.TopPosters.csproj",
   "expectedPackageFiles": [
@@ -41,5 +41,15 @@
     "/Users/andreabezio/.nuget/packages/microsoft.netcore.app.ref/8.0.25/microsoft.netcore.app.ref.8.0.25.nupkg.sha512",
     "/Users/andreabezio/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.25/microsoft.aspnetcore.app.ref.8.0.25.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "message": "Si è verificato un errore durante il recupero dei dati sulla vulnerabilità del pacchetto: Non è possibile caricare l'indice del servizio per l'origine https://api.nuget.org/v3/index.json.",
+      "projectPath": "/Users/andreabezio/Documents/Progetti/Jellyfin.Plugin.TopPosters/Jellyfin.Plugin.TopPosters.csproj",
+      "warningLevel": 1,
+      "filePath": "/Users/andreabezio/Documents/Progetti/Jellyfin.Plugin.TopPosters/Jellyfin.Plugin.TopPosters.csproj",
+      "targetGraphs": []
+    }
+  ]
 }

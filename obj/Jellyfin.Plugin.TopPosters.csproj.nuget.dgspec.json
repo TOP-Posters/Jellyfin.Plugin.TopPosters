@@ -5,7 +5,7 @@
   },
   "projects": {
     "/Users/andreabezio/Documents/Progetti/Jellyfin.Plugin.TopPosters/Jellyfin.Plugin.TopPosters.csproj": {
-      "version": "1.0.0",
+      "version": "1.0.9",
       "restore": {
         "projectUniqueName": "/Users/andreabezio/Documents/Progetti/Jellyfin.Plugin.TopPosters/Jellyfin.Plugin.TopPosters.csproj",
         "projectName": "Jellyfin.Plugin.TopPosters",

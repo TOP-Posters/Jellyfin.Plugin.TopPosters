@@ -12,11 +12,11 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("Jellyfin.Plugin.TopPosters")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e82dfc3adeab42dacab1c0cadee6f07b319891ae")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.9.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.9.0+0ef1f5c7ee01395b461ccf9cfd898e66ef78f8d7")]
 [assembly: System.Reflection.AssemblyProductAttribute("Jellyfin.Plugin.TopPosters")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Jellyfin.Plugin.TopPosters")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.9.0")]
 
 // Generato dalla classe WriteCodeFragment di MSBuild.
 
