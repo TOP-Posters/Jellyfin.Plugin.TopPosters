@@ -15,7 +15,7 @@ public class Plugin : BasePlugin<PluginConfiguration>, IHasWebPages
 
     public override Guid Id => Guid.Parse("a3f2e1d4-5b6c-7d8e-9f0a-1b2c3d4e5f6a");
 
-    public override string Description => "Generates movie and TV posters with multi-source rating badges via TOP Posters API.";
+    public override string Description => "Posters, season covers, episode thumbnails, logos and backgrounds from TOP Posters, with optional scheduled artwork refresh.";
 
     public Plugin(IApplicationPaths applicationPaths, IXmlSerializer xmlSerializer)
         : base(applicationPaths, xmlSerializer)

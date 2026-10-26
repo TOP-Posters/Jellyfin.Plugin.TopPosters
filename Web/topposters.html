@@ -11,7 +11,7 @@
                         <a is="emby-linkbutton" class="button-link" href="https://top-posters.com/user/register" target="_blank">${ButtonLearnMore}</a>
                     </p>
                     <p>
-                        Customize posters (language, style, badges) from your
+                        Customize artwork (language, style, badges) from your
                         <a is="emby-linkbutton" class="button-link" href="https://top-posters.com/user/dashboard" target="_blank">personal dashboard</a>.
                         All preferences are applied automatically via your API key.
                     </p>
@@ -22,10 +22,33 @@
                         Find your API key in your <a is="emby-linkbutton" class="button-link" href="https://top-posters.com/user/dashboard" target="_blank">dashboard</a> under <strong>API Key</strong>.
                     </div>
                 </div>
+                <div class="verticalSection">
+                    <h3>Artwork</h3>
+                    <label class="checkboxContainer"><input is="emby-checkbox" type="checkbox" id="enablePosters" /><span>Movie and series posters</span></label>
+                    <label class="checkboxContainer"><input is="emby-checkbox" type="checkbox" id="enableSeasonPosters" /><span>Season posters</span></label>
+                    <label class="checkboxContainer"><input is="emby-checkbox" type="checkbox" id="enableEpisodeThumbnails" /><span>Episode thumbnails (Premium)</span></label>
+                    <label class="checkboxContainer"><input is="emby-checkbox" type="checkbox" id="enableLogos" /><span>Title logos (Premium)</span></label>
+                    <label class="checkboxContainer"><input is="emby-checkbox" type="checkbox" id="enableBackdrops" /><span>Backgrounds (Premium)</span></label>
+                    <p class="fieldDescription">Logos and backgrounds must also be enabled in your TOP Posters dashboard. Enable TOP Posters as an image fetcher for each item type in your Jellyfin libraries, including Seasons.</p>
+                </div>
+                <div class="verticalSection">
+                    <h3>Refresh existing artwork</h3>
+                    <label class="checkboxContainer"><input is="emby-checkbox" type="checkbox" id="enableArtworkRefresh" /><span>Enable artwork refresh</span></label>
+                    <p class="fieldDescription">Refresh replaces the selected artwork in libraries with TOP Posters enabled, including manually chosen images. Lock any items you want to keep. Metadata and watched progress are preserved.</p>
+                    <div class="inputContainer">
+                        <input is="emby-input" type="number" id="refreshBatchSize" min="1" max="1000" step="1" label="Maximum titles per run" required />
+                        <div class="fieldDescription">Default: 100 titles per run. Each selected image uses an API request, even when unchanged. Large libraries rotate across runs, starting with titles checked least recently.</div>
+                    </div>
+                    <p class="fieldDescription">The task runs every 24 hours by default. Change its schedule or view progress under Dashboard → Scheduled Tasks → TOP Posters. After changing style or badges, use Save and refresh now to start the next batch.</p>
+                </div>
                 <div>
                     <button is="emby-button" type="submit" class="raised button-submit block">
                         <span>${Save}</span>
                     </button>
+                </div>
+                <div style="margin-top: 1em">
+                    <button is="emby-button" type="button" id="refreshArtwork" class="raised block"><span>Save and refresh now</span></button>
+                    <p id="refreshStatus" class="fieldDescription" role="status" aria-live="polite"></p>
                 </div>
             </form>
         </div>
