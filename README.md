@@ -2,8 +2,10 @@
 
 Artwork provider for Jellyfin 12 / .NET 10. Movie and series posters, season
 covers, episode thumbnails, transparent title logos and metadata backgrounds
-come from your TOP Posters API key. Appearance follows your TOP Posters dashboard,
-including the Jellyfin device profile.
+come from your TOP Posters API key. Appearance follows your TOP Posters dashboard.
+The server appears there as the **Jellyfin Server** device: its settings apply to
+everyone who watches through it, because Jellyfin stores the images and serves the
+same ones to every client.
 
 ## Set up artwork
 
@@ -11,6 +13,8 @@ including the Jellyfin device profile.
    TOP Posters from the plugin catalog, and restart Jellyfin. Check that the
    selected release supports your server version. Artwork options and scheduled
    refresh described here require plugin **1.2.0 or later for Jellyfin 12**.
+   Jellyfin 10.9–10.11 servers get 1.0.10, with movie and series posters and
+   episode thumbnails.
 2. Open **Dashboard → Plugins → TOP Posters**, enter the API key and choose the
    artwork types. Movie/series posters, seasons and episode thumbnails are enabled
    by default. Logos and backgrounds are optional and disabled by default.
